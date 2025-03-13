@@ -141,13 +141,13 @@ const Home = () => {
                 </p>
               </div>
               <div className="space-x-4">
-                <Link href="/auth/register">
+                <Link href="/register">
                   <Button size="lg">
                     Sign Up Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/auth/login">
+                <Link href="/login">
                   <Button variant="outline" size="lg">
                     Login
                   </Button>
