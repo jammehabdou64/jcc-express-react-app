@@ -8,11 +8,11 @@ const Header = () => {
       <div className="container mx-auto flex h-full items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Server className="h-6 w-6" />
-          <span className="font-bold">Express Framework</span>
+          <span className="font-bold">JCC Framework</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
-            href="#"
+            href="/"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
             Docs

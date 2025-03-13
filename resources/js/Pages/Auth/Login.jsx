@@ -1,6 +1,6 @@
 import React from "react";
 import { AlertCircle } from "lucide-react";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { Alert, AlertDescription } from "@/Components/ui/alert";
 import { Button } from "@/Components/ui/button";
 import {
@@ -33,6 +33,7 @@ const Login = () => {
 
   return (
     <>
+      <Head title="Login" />
       <Header />
       <div className="container mx-auto flex items-center justify-center min-h-[calc(100vh-4rem)] py-12">
         <Card className="w-full max-w-md">

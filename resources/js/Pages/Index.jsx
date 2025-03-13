@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
+import { Link, Head } from "@inertiajs/react";
 import { ArrowRight, Code, Database, Lock, Server } from "lucide-react";
 
 import { Button } from "@/Components/ui/button";
@@ -7,6 +7,7 @@ import Header from "@/Components/Header";
 const Home = () => {
   return (
     <>
+      <Head title="Welcome" />
       <Header />
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
@@ -15,7 +16,7 @@ const Home = () => {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  JCC Express Framework Simplified
+                  JCC Framework Simplified
                 </h1>
                 <p className="mx-auto max-w-[700px]  text-muted-foreground md:text-xl">
                   A powerful, lightweight framework built on top of Express.js
@@ -162,10 +163,10 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="flex items-center space-x-2">
                 <Server className="h-6 w-6" />
-                <span className="text-lg font-bold">JCC Express Framework</span>
+                <span className="text-lg font-bold">JCC Framework</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Express Framework. All rights
+                © {new Date().getFullYear()} JCC Framework. All rights
                 reserved.
               </p>
             </div>

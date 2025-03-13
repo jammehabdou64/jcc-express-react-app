@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { Button } from "@/Components/ui/button";
 import {
   Card,
@@ -32,6 +32,7 @@ const Register = () => {
 
   return (
     <>
+      <Head title="Register" />
       <Header />
       <div className="container mx-auto flex items-center justify-center min-h-[calc(100vh-4rem)] py-12">
         <Card className="w-full max-w-md">
