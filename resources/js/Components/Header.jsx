@@ -11,12 +11,13 @@ const Header = () => {
           <span className="font-bold">JCC Framework</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link
-            href="/"
+          <a
+            href="https://github.com/jammehabdou64/new-jcc-express-mvc-app"
+            target="_blank"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
             Docs
-          </Link>
+          </a>
           <Link
             href="login"
             className="text-sm font-medium hover:underline underline-offset-4"
