@@ -4,9 +4,9 @@
   "main": "server.ts",
   "scripts": {
     "start": "node -r tsconfig-paths/register server.js",
-    "dev": "tsx watch --require tsconfig-paths/register server.ts",
+    "dev": "bun --watch -r tsconfig-paths/register server.ts",
     "watch": "vite",
-    "build": "tsc && ts-node artisanNode build",
+    "build": "tsc && bun artisanNode build",
     "vite-build": "vite build"
   },
   "keywords": [],
@@ -103,7 +103,6 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.17",
     "tsconfig-paths": "^4.2.0",
-    "tsx": "^4.19.3",
     "typescript": "^5.7.3",
     "vite": "^6.0.7"
   }
