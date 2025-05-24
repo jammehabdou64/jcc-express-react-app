@@ -1,3 +1,3 @@
-import { server } from "jcc-express-mvc/server";
+import { app } from "./bootstrap/app";
 
-server.listen();
+app.run();

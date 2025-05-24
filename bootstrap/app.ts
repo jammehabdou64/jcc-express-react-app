@@ -1,6 +1,22 @@
-import { ConsoleKernel } from "jcc-express-mvc/core/cli";
-import { app } from "jcc-express-mvc/core/Dependency";
+import { Application } from "jcc-express-mvc/Core";
 
-app.singleton<ConsoleKernel>("ConsoleKernel", () => new ConsoleKernel());
+import { providers } from "./providers";
+import { Kernel } from "../app/Http/kernel";
+
+const app = Application.configuration()
+  .withRouting([
+    {
+      name: "routes/api",
+      prefix: "/api",
+    },
+    {
+      name: "routes/web",
+      prefix: "",
+    },
+  ])
+  .withProviders(providers)
+  .withKernel(Kernel)
+  .withMiddleware()
+  .create();
 
 export { app };

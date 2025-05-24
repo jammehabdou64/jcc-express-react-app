@@ -1,8 +1,8 @@
-import { Container } from "jcc-express-mvc/core/Container";
-import { ServiceProvider } from "jcc-express-mvc/lib/Services/ServiceProvider";
+import { Application } from "jcc-express-mvc/Core";
+import { ServiceProvider } from "jcc-express-mvc/Core/Provider";
 
 export class AppServiceProvider extends ServiceProvider {
-  constructor(app: Container) {
+  constructor(app: Application) {
     super(app);
   }
 

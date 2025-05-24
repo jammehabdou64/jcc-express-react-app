@@ -1,5 +1,5 @@
-import { ApiRoute } from "jcc-express-mvc/Route";
+import { Route } from "jcc-express-mvc/Core";
 
-ApiRoute.get("/", async function (req, res) {
+Route.get("/", async function (req, res) {
   return res.json({ msg: [] });
 });

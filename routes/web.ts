@@ -1,6 +1,7 @@
+import { Route } from "jcc-express-mvc/Core";
+
 import { UsersController } from "@Controllers/UsersController";
-import { Auth } from "jcc-express-mvc/";
-import { Route } from "jcc-express-mvc/Route";
+import { Auth } from "jcc-express-mvc";
 
 Route.get("/", (req, res) => {
   return res.inertia("Index");

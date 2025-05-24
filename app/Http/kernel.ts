@@ -5,12 +5,12 @@ import flash from "connect-flash";
 import fileUpload from "express-fileupload";
 import morgan from "morgan";
 import { auth, guest } from "jcc-express-mvc";
-import { inertia } from "jcc-express-mvc/inertia";
+import { inertia } from "jcc-express-mvc/Core/Inertia";
 
 export class Kernel {
   //
 
-  protected middleware = [
+  public middlewares = [
     morgan("dev"),
     cookieParser(),
     cors(),
@@ -25,7 +25,7 @@ export class Kernel {
     inertia({ rootView: "index" }),
   ];
 
-  static middlewareAliases = {
+  public middlewareAliases = {
     auth,
     guest,
   };
