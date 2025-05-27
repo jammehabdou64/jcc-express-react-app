@@ -2,6 +2,7 @@
 
 # dependencies
 /public/build
+/public/hot
 /node_modules
 /.pnp
 .pnp.js
