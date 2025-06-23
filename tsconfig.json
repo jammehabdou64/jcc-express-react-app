@@ -2,8 +2,8 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "declaration": true,
-    "declarationMap": true, // Optional, generates source maps for declarations
+    "declaration": false,
+    "declarationMap": false, // Optional, generates source maps for declarations
     "baseUrl": ".",
     "paths": {
       "@/Model/*": ["app/Models/*"],

@@ -1,5 +1,5 @@
-import { FormRequest } from "jcc-express-mvc/core/FormRequest";
-import { Request } from "jcc-express-mvc/core/http";
+import { FormRequest } from "jcc-express-mvc/Core/FormRequest";
+import { Request } from "jcc-express-mvc";
 
 export class UserRequest extends FormRequest {
   constructor(req: Request) {
@@ -7,7 +7,7 @@ export class UserRequest extends FormRequest {
   }
 
   async rules() {
-    await this.apiValidate({
+    await this.validate({
       //
     });
   }
