@@ -1,4 +1,3 @@
-import cors from "cors";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import flash from "connect-flash";
@@ -13,7 +12,6 @@ export class Kernel {
   public middlewares = [
     morgan("dev"),
     cookieParser(),
-    cors(),
     session({
       secret: "ggggggg",
       resave: false,

@@ -1,14 +1,8 @@
-import { Application } from "express";
-
-export const templateEngine = (app: Application) => {
-  // hbs.registerPartials(`${getRoot}/resources/views/partials`, (err) => {
-  //   if (err) {
-  //     return console.log({ "Temp-engine": err });
-  //   }
-  // });
-
-  // app.set("views", `${getRoot}/resources/views`);
-  // app.set("view engine", "hbs");
-
-  return;
+import { jsBladeEngine } from "jcc-express-mvc/lib/Templating-engine";
+export const engine = {
+  templateEngine: "jcc-blade",
+  engine: null,
+  view: "resources/views",
+  viewEngine: jsBladeEngine.render.bind(jsBladeEngine),
+  viewEngineExtension: "blade.html",
 };
