@@ -1,7 +1,4 @@
-import React from "react";
-import { AlertCircle } from "lucide-react";
 import { Head, Link } from "@inertiajs/react";
-import { Alert, AlertDescription } from "@/Components/ui/alert";
 import { Button } from "@/Components/ui/button";
 import {
   Card,

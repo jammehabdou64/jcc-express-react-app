@@ -1,24 +1,15 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "declaration": false,
-    "declarationMap": false, // Optional, generates source maps for declarations
-    "baseUrl": ".",
-    "paths": {
-      "@/Model/*": ["app/Models/*"],
-      "@Controllers/*": ["app/Http/Controllers/*"],
-      "@/Request/*": ["app/Http/Requests/*"],
-      "@Providers/*": ["app/Providers/*"],
-      "@/Services/*": ["app/Services/*"]
-    },
-    "esModuleInterop": true,
+    "target": "ES2021",
     "outDir": "./build",
     "strict": true,
-    "target": "ES2021",
-    "skipLibCheck": true, // Skip type checking of all declaration files (.d.ts)
-    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
-    "resolveJsonModule": true, //
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },

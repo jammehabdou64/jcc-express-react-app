@@ -13,14 +13,13 @@ export class Kernel {
     morgan("dev"),
     cookieParser(),
     session({
-      secret: "ggggggg",
+      secret: process.env.SESSION_SECRET || "JCCC____",
       resave: false,
       saveUninitialized: false,
-      cookie: { maxAge: 60000 },
     }),
     flash(),
     fileUpload(),
-    inertia({ rootView: "index" }),
+    inertia({ rootView: "index", ssr: true }),
   ];
 
   public middlewareAliases = {

@@ -2,6 +2,7 @@
 
 # dependencies
 /public/build
+/bootstrap/ssr
 /public/hot
 /node_modules
 /.pnp

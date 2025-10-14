@@ -7,9 +7,13 @@ export default defineConfig({
   plugins: [
     laravel({
       input: ["resources/css/app.css", "resources/js/app.jsx"],
-      // refresh: true,
+      ssr: "resources/js/ssr.jsx",
+      refresh: true,
     }),
     tailwindcss(),
     react(),
   ],
+  ssr: {
+    noExternal: ["@inertiajs/vue3", "@inertiajs/react"], // adjust if needed
+  },
 });
