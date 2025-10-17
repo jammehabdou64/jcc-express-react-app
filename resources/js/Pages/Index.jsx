@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, Head } from "@inertiajs/react";
 import { ArrowRight, Code, Database, Lock, Server } from "lucide-react";
 

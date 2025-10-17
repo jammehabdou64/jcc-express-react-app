@@ -1,22 +1,7 @@
-import React from "react";
-import {
-  BarChart,
-  Clock,
-  Database,
-  FileText,
-  Server,
-  Settings,
-  Users,
-} from "lucide-react";
+import { BarChart, Clock, Server, Users } from "lucide-react";
 
 import { Button } from "@/Components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/Components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card";
 import { Head, Link, usePage } from "@inertiajs/react";
 const Home = () => {
   const auth = usePage().props;
