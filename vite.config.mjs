@@ -13,7 +13,7 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
-  ssr: {
-    noExternal: ["@inertiajs/vue3", "@inertiajs/react"], // adjust if needed
+  esbuild: {
+    jsx: "automatic",
   },
 });
