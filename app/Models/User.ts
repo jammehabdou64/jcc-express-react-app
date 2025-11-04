@@ -1,5 +1,5 @@
-import { Model } from "jcc-eloquent";
+import { Model } from "jcc-express-mvc/Eloquent";
 
 export class User extends Model {
-  protected static hidden: string[] = ["password"];
+  protected hidden: string[] = ["password"];
 }
