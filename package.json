@@ -59,7 +59,7 @@
     "express-session": "^1.18.2",
     "fs-extra": "^11.3.2",
     "inflection": "^3.0.2",
-    "jcc-express-mvc": "^1.6.17",
+    "jcc-express-mvc": "^1.6.19",
     "jsonwebtoken": "^9.0.2",
     "knex": "^3.1.0",
     "lucide-react": "^0.545.0",
