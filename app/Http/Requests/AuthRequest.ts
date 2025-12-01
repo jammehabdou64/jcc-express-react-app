@@ -18,7 +18,7 @@ export class AuthRequest extends FormRequest {
   }
 
   async save() {
-    await this.rules();
+    // await this.rules();
     return User.create({
       name: this.input("name"),
       email: this.input("email"),
