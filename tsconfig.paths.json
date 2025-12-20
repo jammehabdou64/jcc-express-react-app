@@ -5,7 +5,9 @@
       "@Controllers/*": ["./app/Http/Controllers/*"],
       "@/Request/*": ["./app/Http/Requests/*"],
       "@Providers/*": ["./app/Providers/*"],
-      "@/Services/*": ["./app/Services/*"]
+      "@/Services/*": ["./app/Services/*"],
+      "app/*": ["./app/*"],
+      "@/Components/*": ["./resources/ts/Components/*"]
     }
   }
 }
