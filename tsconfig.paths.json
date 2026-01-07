@@ -6,8 +6,8 @@
       "@/Request/*": ["./app/Http/Requests/*"],
       "@Providers/*": ["./app/Providers/*"],
       "@/Services/*": ["./app/Services/*"],
-      "app/*": ["./app/*"],
-      "@/Components/*": ["./resources/ts/Components/*"]
+      "@/*": ["./resources/js/*"],
+      "app/*": ["./app/*"]
     }
   }
 }

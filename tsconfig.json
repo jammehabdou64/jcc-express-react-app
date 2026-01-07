@@ -3,10 +3,12 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "target": "ES2021",
+    "declaration": false, // <-- turn off .d.ts generation
+    "declarationMap": false, // <-- turn off declaration maps
+    "esModuleInterop": true,
     "outDir": "./build",
     "strict": true,
-    "esModuleInterop": true,
+    "target": "ES2021",
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
