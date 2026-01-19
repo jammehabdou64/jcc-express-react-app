@@ -10,7 +10,6 @@ export class Kernel {
   //
 
   public middlewares = [
-    morgan("dev"),
     cookieParser(),
     session({
       secret: process.env.SESSION_SECRET || "JCCC____",
