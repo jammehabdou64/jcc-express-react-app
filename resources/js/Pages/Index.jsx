@@ -29,10 +29,7 @@ const Home = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <a
-                  href="https://github.com/jammehabdou64/new-jcc-express-mvc-app"
-                  target="_blank"
-                >
+                <a href="https://www.jcc-express.uk" target="_blank">
                   <Button variant="outline" size="lg">
                     Documentation
                   </Button>
@@ -168,8 +165,7 @@ const Home = () => {
                 <span className="text-lg font-bold">JCC Framework</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} JCC Framework. All rights
-                reserved.
+                © {new Date().getFullYear()} JCC Framework. All rights reserved.
               </p>
             </div>
           </div>

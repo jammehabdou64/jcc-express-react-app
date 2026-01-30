@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <a
-            href="https://github.com/jammehabdou64/new-jcc-express-mvc-app"
+            href="https://www.jcc-express.uk"
             target="_blank"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
