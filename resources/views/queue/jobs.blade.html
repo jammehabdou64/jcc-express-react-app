@@ -1,0 +1,9 @@
+@extends("layout.app") @section("title", "{{status}} JOBS") @section("content")
+@include("partials.queues.sidebar")
+<main class="flex-1 overflow-y-auto scrollbar-custom">
+  @include("partials.queues.top-header")
+  <div class="px-8 py-7 space-y-8">
+    <div>@include("partials.queues.jobs-table")</div>
+  </div>
+</main>
+@endsection

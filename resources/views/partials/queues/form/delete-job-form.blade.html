@@ -1,0 +1,9 @@
+<form method="POST" action="{{ action }}">
+  @csrf @method('DELETE')
+  <button
+    type="submit"
+    class="text-xs bg-red-200 rounded-sm px-4 py-2 text-rose-400 hover:text-rose-300 font-mono transition-colors"
+  >
+    Delete
+  </button>
+</form>

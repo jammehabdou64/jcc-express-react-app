@@ -1,0 +1,209 @@
+@js const statusBadge = (status) => { if (status == "pending") { return
+`badge-active text-xs font-mono px-2 py-1 rounded-md`; } else if (status ==
+"completed") { return `bg-green-100 text-green-800 text-xs font-mono px-2 py-1
+rounded-md`; } else { return `bg-rose-100 text-rose-500 font-mono px-2 py-1
+rounded-md`; } }; @endjs
+<section class="section-fade">
+  <div class="flex items-center gap-3 mb-5">
+    <span
+      class="text-xs font-700 uppercase tracking-widest text-horizon-muted font-mono"
+      >{{status}} Jobs</span
+    >
+    <div class="flex-1 h-px bg-horizon-border"></div>
+    <span id="job-count" class="text-xs font-mono text-horizon-muted"
+      >{{totalJobs}} jobs</span
+    >
+  </div>
+
+  <div
+    class="rounded-xl border border-horizon-border overflow-hidden bg-horizon-card"
+  >
+    <!-- Search Bar -->
+    <div
+      class="flex items-center gap-3 px-5 py-4 border-b border-horizon-border bg-horizon-panel/40"
+    >
+      <div class="relative flex-1">
+        <svg
+          class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-horizon-muted pointer-events-none"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="11" cy="11" r="8" stroke-width="1.8" />
+          <path
+            d="m21 21-4.35-4.35"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </svg>
+        <input
+          id="job-search"
+          type="text"
+          placeholder="Filter jobs by name, queue, or status..."
+          oninput="filterJobs()"
+          class="w-full bg-horizon-bg border border-horizon-border rounded-lg pl-9 pr-4 py-2.5 text-sm font-mono text-horizon-text placeholder-horizon-dim focus:outline-none focus:border-horizon-cyanDim focus:ring-1 focus:ring-horizon-cyan/20 transition-all duration-200"
+          style="background: #070d1a"
+        />
+      </div>
+      <div class="flex items-center gap-2">
+        <select
+          id="status-filter"
+          onchange="filterJobs()"
+          class="bg-horizon-bg border border-horizon-border rounded-lg px-3 py-2.5 text-xs font-mono text-horizon-muted focus:outline-none focus:border-horizon-cyanDim transition-all duration-200 cursor-pointer"
+          style="background: #070d1a"
+        >
+          <option value="">All Status</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+          <option value="failed">Failed</option>
+          <option value="running">Running</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div
+      class="rounded-xl border border-horizon-border overflow-hidden bg-horizon-card"
+    >
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-horizon-border">
+            <th
+              class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Job Name
+            </th>
+
+            <th
+              class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Available At
+            </th>
+
+            <th
+              class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Attempts
+            </th>
+
+            <th
+              class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Queue
+            </th>
+            <th
+              class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Status
+            </th>
+            @if(status == 'failed')
+            <th
+              class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Exception
+            </th>
+            @endif
+
+            <th
+              class="text-right px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+            >
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (jobs as job)
+          <tr class="table-row border-b border-horizon-border/50">
+            <td class="px-5 py-3.5 font-mono text-horizon-text font-500">
+              {{ job.payload.job }}
+            </td>
+            <td class="px-5 py-3.5">{{ job.available_at }}</td>
+            <td class="px-5 py-3.5">{{ job.attempts }}</td>
+            <td class="px-5 py-3.5">{{ job.queue }}</td>
+            <td class="px-5 py-3.5">
+              <span class="{{ statusBadge(job.status) }}">
+                {{ job.status.toUpperCase() }}
+              </span>
+            </td>
+            @if(status == 'failed')
+            <td class="px-5 py-3.5">{{ job.exception.slice(0, 70) }}...</td>
+            @endif
+            <td class="px-5 py-3.5 text-right">
+              <div class="flex gap-x-3 justify-end">
+                @include("partials.queues.form.job-form", { method: "PATCH",
+                action: "/queue/jobs/" + job.id + "/" + job.status })
+                @include("partials.queues.form.delete-job-form", { action:
+                "/queue/jobs/" + job.id })
+              </div>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Empty state -->
+    <div id="no-results" class="hidden px-5 py-10 text-center">
+      <svg
+        class="w-8 h-8 text-horizon-dim mx-auto mb-3"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="11" cy="11" r="8" stroke-width="1.5" />
+        <path d="m21 21-4.35-4.35" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <p class="text-sm text-horizon-muted font-mono">
+        No jobs match your search
+      </p>
+    </div>
+
+    <!-- Footer -->
+    {{--
+    <div
+      class="px-5 py-3 border-t border-horizon-border bg-horizon-panel/20 flex items-center justify-between"
+    >
+      <span id="results-count" class="text-xs font-mono text-horizon-muted"
+        >Showing 12 of 12</span
+      >
+      <div class="flex items-center gap-1">
+        <button
+          class="w-7 h-7 rounded-md border border-horizon-border flex items-center justify-center text-horizon-muted hover:text-horizon-cyan hover:border-horizon-cyanDim transition-all duration-200"
+        >
+          <svg
+            class="w-3.5 h-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15 19l-7-7 7-7"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <span class="text-xs font-mono text-horizon-muted px-2">1 / 1</span>
+        <button
+          class="w-7 h-7 rounded-md border border-horizon-border flex items-center justify-center text-horizon-muted hover:text-horizon-cyan hover:border-horizon-cyanDim transition-all duration-200"
+        >
+          <svg
+            class="w-3.5 h-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 5l7 7-7 7"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  --}}
+</section>

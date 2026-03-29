@@ -8,7 +8,7 @@ export class AuthController {
   //
 
   async login({ req, res, next } = httpContext) {
-    return Auth.attempt(req, res, next);
+    return Auth.attempt(next);
   }
 
   //
@@ -17,7 +17,7 @@ export class AuthController {
   async register({ req, res, next } = httpContext, authRequest: AuthRequest) {
     const save = await authRequest.save();
     return save
-      ? Auth.attempt(req, res, next)
+      ? Auth.attempt(next)
       : res.json({ message: "Invalid credentials" });
   }
 

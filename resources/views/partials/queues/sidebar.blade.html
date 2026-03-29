@@ -1,0 +1,127 @@
+<aside
+  class="w-56 flex-shrink-0 flex flex-col border-r border-horizon-border bg-horizon-panel/60 backdrop-blur-sm"
+>
+  <!-- Logo -->
+  <div class="px-5 py-5 border-b border-horizon-border">
+    <div class="flex items-center gap-3">
+      <div
+        class="logo-ring w-9 h-9 rounded-xl flex items-center justify-center"
+      >
+        <!-- Horizon SVG icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="#00d4ff"
+            stroke-width="1.5"
+            opacity="0.4"
+          />
+          <path
+            d="M2 12 Q7 6 12 12 Q17 18 22 12"
+            stroke="#00d4ff"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <circle cx="12" cy="12" r="2" fill="#00d4ff" />
+        </svg>
+      </div>
+      <div>
+        <div class="text-sm font-700 text-horizon-text leading-none">
+          Horizon
+        </div>
+        <div class="text-xs text-horizon-muted font-mono mt-0.5">Laravel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 py-4 px-2 space-y-0.5 overflow-y-auto scrollbar-custom">
+    <a
+      href="/queue/dashboard"
+      class="sidebar-item {{ url == '/queue/dashboard' ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-500 text-horizon-muted  cursor-pointer"
+    >
+      <svg
+        class="w-4 h-4 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <rect x="3" y="3" width="7" height="7" rx="1" stroke-width="1.8" />
+        <rect x="14" y="3" width="7" height="7" rx="1" stroke-width="1.8" />
+        <rect x="3" y="14" width="7" height="7" rx="1" stroke-width="1.8" />
+        <rect x="14" y="14" width="7" height="7" rx="1" stroke-width="1.8" />
+      </svg>
+      Dashboard
+    </a>
+
+    <a
+      href="/queue/jobs/completed"
+      class="sidebar-item {{ url == '/queue/jobs/completed' ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-500 text-horizon-muted cursor-pointer"
+    >
+      <svg
+        class="w-4 h-4 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 12l2 2 4-4"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="12" cy="12" r="10" stroke-width="1.8" />
+      </svg>
+      Completed Jobs
+    </a>
+    <a
+      href="/queue/jobs/pending"
+      class="sidebar-item {{ url == '/queue/jobs/pending' ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-500 text-horizon-muted  cursor-pointer"
+    >
+      <svg
+        class="w-4 h-4 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </svg>
+      Pending Jobs
+    </a>
+    <a
+      href="/queue/jobs/failed"
+      class="sidebar-item {{ url == '/queue/jobs/failed' ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-500 text-horizon-muted  cursor-pointer"
+    >
+      <svg
+        class="w-4 h-4 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      Failed Jobs
+    </a>
+  </nav>
+
+  <!-- Bottom status -->
+  <div class="px-4 py-4 border-t border-horizon-border">
+    <div class="flex items-center gap-2 text-xs text-horizon-muted font-mono">
+      <span
+        class="glow-dot w-1.5 h-1.5 rounded-full bg-horizon-cyan inline-block animate-pulse-slow"
+      ></span>
+      System nominal
+    </div>
+  </div>
+</aside>

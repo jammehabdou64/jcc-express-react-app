@@ -16,12 +16,13 @@ Route.middleware("guest").get("/register", (req, res) =>
 );
 
 Route.middleware(["auth"]).get("/home", (req, res, next) => {
+  console.log(auth());
   return res.inertia("Home");
 });
 
 Route.prefix("/auth").group((Route) => {
-  Route.post("/login", Auth.attempt);
+  Route.post("/login", [AuthController, "login"]);
   Route.post("/register", [AuthController, "register"]);
 });
 
-Route.get("/logout", Auth.logout);
+Route.get("/logout", () => Auth.logout());

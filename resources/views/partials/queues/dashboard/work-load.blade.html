@@ -1,0 +1,61 @@
+<section class="section-fade">
+  <div class="flex items-center gap-3 mb-5">
+    <span
+      class="text-xs font-700 uppercase tracking-widest text-horizon-muted font-mono"
+      >Current Workload</span
+    >
+    <div class="flex-1 h-px bg-horizon-border"></div>
+  </div>
+
+  <div
+    class="rounded-xl border border-horizon-border overflow-hidden bg-horizon-card"
+  >
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b border-horizon-border">
+          <th
+            class="text-left px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+          >
+            Queue
+          </th>
+          <th
+            class="text-right px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+          >
+            Jobs
+          </th>
+          <th
+            class="text-right px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+          >
+            Processes
+          </th>
+          <th
+            class="text-right px-5 py-3.5 text-xs font-700 text-horizon-muted font-mono uppercase tracking-wider"
+          >
+            Wait
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-row border-b border-horizon-border/50">
+          <td class="px-5 py-4">
+            <div class="flex items-center gap-2.5">
+              <div
+                class="w-1.5 h-1.5 rounded-full bg-horizon-cyan glow-dot"
+              ></div>
+              <span class="font-mono text-horizon-text font-500">default</span>
+            </div>
+          </td>
+          <td class="px-5 py-4 text-right font-mono text-horizon-cyan font-600">
+            200
+          </td>
+          <td class="px-5 py-4 text-right font-mono text-horizon-text">2</td>
+          <td class="px-5 py-4 text-right">
+            <span class="badge-active text-xs font-mono px-2 py-1 rounded-md"
+              >a few seconds</span
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
