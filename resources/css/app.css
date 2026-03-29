@@ -27,6 +27,29 @@
   --color-chart-3: hsl(var(--chart-3));
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
+
+  --color-horizon-bg: #070d1a;
+  --color-horizon-panel: #0b1426;
+  --color-horizon-card: #0f1e35;
+  --color-horizon-border: #132040;
+  --color-horizon-borderHover: #1e3a6e;
+  --color-horizon-cyan: #00d4ff;
+  --color-horizon-cyanDim: #0099bb;
+  --color-horizon-blue: #0070f3;
+  --color-horizon-blueDim: #004ab5;
+  --color-horizon-text: #e2eeff;
+  --color-horizon-muted: #5a7da0;
+  --color-horizon-dim: #2a4570;
+
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.15);
+  --shadow-glowMd: 0 0 40px rgba(0, 212, 255, 0.1);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  /* Animations */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease forwards;
+  --animate-slide-up: slideUp 0.4s ease forwards;
 }
 
 @theme {
@@ -61,11 +84,6 @@
     height: 0;
   }
 }
-
-/* @theme {
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-} */
 
 @theme {
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -167,4 +185,145 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard {
+  background-color: #070d1a;
+}
+
+.sidebar-item {
+  transition: all 0.2s ease;
+}
+.sidebar-item:hover {
+  background: rgba(0, 212, 255, 0.07);
+  color: #00d4ff;
+}
+.sidebar-item.active {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  border-right: 2px solid #00d4ff;
+}
+
+.stat-card {
+  background: #0f1e35;
+  border: 1px solid #132040;
+  transition: all 0.25s ease;
+  animation: slideUp 0.5s ease forwards;
+  opacity: 0;
+}
+.stat-card:hover {
+  border-color: #1e3a6e;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+}
+
+.metric-value {
+  font-family: "JetBrains Mono", monospace;
+  background: linear-gradient(135deg, #00d4ff, #0070f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-dot {
+  box-shadow:
+    0 0 8px #00d4ff,
+    0 0 16px rgba(0, 212, 255, 0.4);
+}
+
+.table-row {
+  transition: background 0.15s ease;
+}
+.table-row:hover {
+  background: rgba(0, 212, 255, 0.04);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #070d1a;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #132040;
+  border-radius: 2px;
+}
+
+.noise-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Staggered animation delays */
+.stat-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.stat-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.stat-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.stat-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.section-fade {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+.section-fade:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.section-fade:nth-child(2) {
+  animation-delay: 0.45s;
+}
+.section-fade:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.badge-active {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+}
+
+.logo-ring {
+  background: linear-gradient(135deg, #00d4ff22, #0070f322);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.top-bar {
+  height: 77px;
 }
