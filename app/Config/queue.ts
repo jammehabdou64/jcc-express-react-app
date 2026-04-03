@@ -1,6 +1,6 @@
 import { config } from "jcc-express-mvc";
 
-export default {
+export const queue = {
   driver: config.get("QUEUE_CONNECTION", "memory"),
 
   connections: {
