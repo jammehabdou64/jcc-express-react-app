@@ -16,7 +16,6 @@ Route.middleware("guest").get("/register", (req, res) =>
 );
 
 Route.middleware(["auth"]).get("/home", (req, res, next) => {
-  console.log(auth());
   return res.inertia("Home");
 });
 
