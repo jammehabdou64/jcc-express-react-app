@@ -3,20 +3,16 @@ import { Route } from "jcc-express-mvc/Core";
 import { AuthController } from "@Controllers/AuthController";
 import { Auth } from "jcc-express-mvc";
 
-Route.get("/", (req, res) => {
-  return res.inertia("Index");
+Route.get("/", () => {
+  return inertia("Index");
 });
 
-Route.middleware("guest").get("/login", (req, res) =>
-  res.inertia("Auth/Login"),
-);
+Route.middleware("guest").get("/login", () => inertia("Auth/Login"));
 
-Route.middleware("guest").get("/register", (req, res) =>
-  res.inertia("Auth/Register"),
-);
+Route.middleware("guest").get("/register", () => inertia("Auth/Register"));
 
-Route.middleware(["auth"]).get("/home", (req, res, next) => {
-  return res.inertia("Home");
+Route.middleware(["auth"]).get("/home", () => {
+  return inertia("Home");
 });
 
 Route.prefix("/auth").group((Route) => {

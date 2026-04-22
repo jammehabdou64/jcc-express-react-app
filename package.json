@@ -2,20 +2,22 @@
   "name": "app",
   "version": "1.0.0",
   "main": "server.ts",
+  "type": "module",
   "scripts": {
+    "ssr": "bun ./build/bootstrap/ssr/ssr",
     "start": "bun ./build/server.js",
     "dev": "bun --watch -r tsconfig-paths/register server.ts",
     "watch": "vite",
-    "build": "tsc && bun artisanNode build",
-    "vite-build": "vite build && vite build --ssr",
-    "ssr:server": "node bootstrap/ssr/ssr.mjs"
+    "build": "vite build && vite build --ssr && tsc && bun artisanNode build",
+    "vite-build": "vite build && vite build --ssr"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@inertiajs/react": "^2.3.21",
+    "@inertiajs/react": "^3.0.3",
+    "@inertiajs/vite": "^3.0.3",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-aspect-ratio": "^1.1.8",
@@ -60,7 +62,7 @@
     "express-session": "^1.19.0",
     "fs-extra": "^11.3.4",
     "inflection": "^3.0.2",
-    "jcc-express-mvc": "^1.8.21",
+    "jcc-express-mvc": "^1.8.22",
     "jsonwebtoken": "^9.0.3",
     "knex": "^3.2.9",
     "lucide-react": "^0.562.0",
@@ -104,7 +106,6 @@
     "type": "git",
     "url": "git+https://github.com/jammehabdou64/jcc-express-react-app.git"
   },
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/jammehabdou64/jcc-express-react-app/issues"
   },
