@@ -5,6 +5,7 @@ import { queue } from "./queue";
 import { rateLimit } from "./rate-limit";
 import { service } from "./service";
 import { session } from "./session";
+import { cache } from "./cache";
 
 export const config = {
   engine,
@@ -14,4 +15,5 @@ export const config = {
   queue,
   service,
   session,
+  cache,
 };
