@@ -50,7 +50,7 @@
         "express-session": "^1.19.0",
         "fs-extra": "^11.3.4",
         "inflection": "^3.0.2",
-        "jcc-express-mvc": "^1.8.23",
+        "jcc-express-mvc": "^1.8.24",
         "jsonwebtoken": "^9.0.3",
         "knex": "^3.2.9",
         "lucide-react": "^0.562.0",
@@ -751,7 +751,7 @@
 
     "isexe": ["isexe@2.0.0", "", {}, "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="],
 
-    "jcc-express-mvc": ["jcc-express-mvc@1.8.24", "", {}, "sha512-AfgvHVSYrfvRuskuxPa1ulgwylYTBthsxJ3IkIj2ywFnOgB3WP7+tMt/WsczGs44foA8rC7CAXKMtn3y7g10xQ=="],
+    "jcc-express-mvc": ["jcc-express-mvc@1.8.25", "", {}, "sha512-uWwrMSqoDrJ1/HWK3QMeNV8QqCzbVAfktGvOEf5FWomu9Ka8sGDWfXv1WDuVXvZiy/xcDuEZiFKijhcsMGzD0w=="],
 
     "jiti": ["jiti@2.6.1", "", { "bin": "lib/jiti-cli.mjs" }, "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ=="],
 
