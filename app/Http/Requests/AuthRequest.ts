@@ -3,8 +3,9 @@ import { Request, bcrypt } from "jcc-express-mvc";
 import { User } from "@/Model/User";
 
 export class AuthRequest extends FormRequest {
-  constructor(req: Request) {
-    super(req);
+  //
+  protected authorize(): boolean {
+    return true;
   }
 
   async rules() {
