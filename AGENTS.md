@@ -23,6 +23,37 @@ Before writing, modifying, or reviewing any code:
 
 </jcc-express-mvc-guidelines>
 
+## Local development (recommended)
+
+Use **two terminals**:
+
+```bash
+# Terminal 1 — Vite (writes public/hot for asset URLs)
+npm run watch
+
+# Terminal 2 — Laravel-style backend watcher (silent reloads, stable session port)
+npm run serve
+# same as: bun artisanNode serve  (alias: watch)
+```
+
+- If `PORT` (default `5500`) is busy, `serve` tries the next free port **without killing** the other process (Laravel-style). Use the URL printed in the terminal.
+- Only **`.env` changes** show a visible restart banner; code reloads stay silent.
+- Simpler alternative: `npm run dev` (`bun --watch server.ts`) — no Laravel-style watcher or `public/hot` integration.
+
+Production: `npm run build` then `npm run start`.
+
+## Framework package
+
+This app consumes **`jcc-express-mvc` from npm** (compiled framework + bundled `final-documentation/`). Do not copy framework source from the monorepo `build/` folder unless explicitly linking for debug.
+
+After a new npm release, bump `"jcc-express-mvc"` in `package.json` and reinstall.
+
+## Optional features (opt-in)
+
+- **Socket.IO** — Register a `SocketProvider` subclass in `bootstrap/providers.ts`. HTTP apps work without it.
+- **Tinker** — `bun artisanNode tinker`: auto-awaited ORM calls, `user = User.first()`, `_`, `dump` / `dd`.
+- **Monitor / Cloudinary** — `bun artisanNode publish Monitor` / `publish Cloudinary` (see docs).
+
 ## Framework Guidelines
 
 - Prefer built-in JCC features over third-party libraries.

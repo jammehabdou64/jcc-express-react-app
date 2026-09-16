@@ -7,6 +7,7 @@
     "ssr": "bun ./build/bootstrap/ssr/ssr",
     "start": "bun ./build/server.js",
     "dev": "bun --watch -r tsconfig-paths/register server.ts",
+    "serve": "bun artisanNode serve",
     "watch": "vite",
     "build": "vite build && vite build --ssr && tsc && bun artisanNode build",
     "vite-build": "vite build && vite build --ssr"
